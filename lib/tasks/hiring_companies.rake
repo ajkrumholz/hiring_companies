@@ -19,5 +19,6 @@ namespace :csv_load do
 
       Company.create!(company_hash)
     end
+    ActiveRecord::Base.connection.reset_pk_sequence!('companies')
   end
 end
