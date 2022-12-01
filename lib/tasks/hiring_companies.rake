@@ -16,8 +16,9 @@ namespace :csv_load do
         one_nice_thing: company[:if_you_work_in_this_company_what_is_one_thing_you_like_about_this_place],
         comments: company[:any_other_comments]
       }
-
-      Company.create!(company_hash)
+      if !company_hash[:company_name].blank?
+        Company.create!(company_hash)
+      end
     end
     ActiveRecord::Base.connection.reset_pk_sequence!('companies')
   end
