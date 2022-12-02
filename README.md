@@ -1,24 +1,27 @@
-# README
+GraphQL Endpoints
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Fetch all companies
 
-Things you may want to cover:
+{
+  fetchCompanies {
+    id
+    companyName
+    description
+    etc...
+  }
+}
 
-* Ruby version
+Fetch a single company
 
-* System dependencies
+{ 
+  fetchCompany(id: 4) {
+    companyName
+    description
+    hiringLink
+    rolesHiringFor
+    locationsHiringIn
+    oneNiceThing
+    comments
+   }
+}
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
