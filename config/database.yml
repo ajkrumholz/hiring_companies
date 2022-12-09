@@ -11,6 +11,9 @@ default: &default
 
 development:
   <<: *default
+  username: <%= ENV['DATABASE_USERNAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  host: <%= ENV['DATABASE_HOST'] %>
   database: now_hiring_development
 
 # Warning: The database defined as "test" will be erased and
@@ -18,8 +21,13 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
+  username: <%= ENV['DATABASE_USERNAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  host: <%= ENV['DATABASE_HOST'] %>
   database: now_hiring_test
 
 production:
   <<: *default
+  username: now_hiring
+  password: <%= ENV['DATABASE_PASSWORD'] %>
   database: now_hiring_production
