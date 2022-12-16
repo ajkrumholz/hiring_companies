@@ -3,7 +3,7 @@ development:
   encoding: unicode
   database: now_hiring_development
   pool: 5
-  username: postgres
+  username: alankrumholz
   password: password
 
 test:
@@ -11,7 +11,7 @@ test:
   encoding: unicode
   database: now_hiring_test
   pool: 5
-  username: postgres
+  username: alankrumholz
   password: password
 
 production:
@@ -19,5 +19,5 @@ production:
   encoding: unicode
   database: now_hiring_production
   pool: 5
-  username: postgres
+  username: alankrumholz
   password: password
