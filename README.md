@@ -48,6 +48,12 @@ Returns the full data set of companies. Of minimal utility, but it's there if yo
 ### Fetch a single company
 
 Returns a single company by ID. Probably most useful if, after returning a list of searched companies, we want to be able to click on a company and have a "show" page for it.
+
+Note: all attributes for the companies are strings (handy!)
+
+##### Arguments
+    id: Integer
+
 #### Sample Request
 ```
 { 
@@ -82,7 +88,11 @@ Returns a single company by ID. Probably most useful if, after returning a list 
 
 ### Search name/description by keyword
 
-This does a fuzzy search on *both* name and description. Best used along side things like "travel" or "fintech" to narrow down companies to the industries in which you're most interested.
+This does a *case-insensitive* search on *both* name and description. Best used along side things like "travel" or "fintech" to narrow down companies to the industries in which you're most interested.
+
+##### Arguments
+    keyword: String
+
 #### Sample Request
 ```
 {
@@ -130,11 +140,15 @@ This does a fuzzy search on *both* name and description. Best used along side th
 
 - Allows you to search multiple qualities simultaneously.
 
-Available Arguments (all Strings)
-  - description
-  - locationsHiringIn
-  - rolesHiringFor
-  - companyName
+##### Arguments (none required)
+
+    description: String 
+    
+    locationsHiringIn: String
+    
+    rolesHiringFor: String
+    
+    companyName: String
 
 Since the data set is of limited size, many queries using all four arguments won't return any hits. This is meant more to combine things like looking for travel jobs in Europe (see below), but it at least offers the flexibility to be extremely specific if you really want to.
 #### Sample Request
